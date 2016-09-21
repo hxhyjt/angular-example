@@ -1,0 +1,20 @@
+1. helloworld  
+   angularjs简单使用  
+   指令：ng-app
+   {{}}
+2. helloworld
+   数据绑定 input  ng-model
+   {{}} 获取ng-model定义的值
+3. helloworld 
+   html ng-controller  定义控制器
+        angular.model()
+        模块.controller('控制器名称',function(){})
+        模块.controller('名称',['$scope',function($scope){
+
+        }])
+4. 双向数据绑定 
+   {{}} 调用方法
+   控制器添加方法
+5. 表达式
+     
+ 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<!-- 
+	给了模块名称后、报错
+	解决： 使用angular.module创建该模块
+ -->
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body>
+	<p>表达式中number</p>
+	{{1+1}}
+	<hr>
+	<p ng-controller='c1'>表达式中变量 计算<br>
+	{{n1+'+'+ n2+'='+ (n1+n2)}}<br>
+	{{n1+'*'+ n2+'='+ (n1*n2)}} <br>
+	{{n1+'÷'+ n2+'='+ (n1/n2)}}
+	</p>
+	<hr>
+	<p ng-controller='c1'>
+	表达式中字符串<br>
+	我想要知道{{n1}}与{{n2}}相加会得到什么样的结果？ <br>
+	{{n1+'+'+n2 +'='+(n1+n2)}}
+	</p>
+	<hr>
+	<p ng-controller='c2'>
+	表达式中对象<br>
+		我认为{{person.name}}今年只有{{person.age}},too young！
+	</p>
+	<hr>
+	<p ng-controller='c3'>
+		表达式中数组<br>
+		第一个里面的是{{sg[0]}}?<br>
+		第二个里面的是{{sg[1]}}?<br>
+		第三个里面的是{{sg[2]}}?<br>
+	</p>
+	<hr>
+	<p ng-controller='c1'>
+		angular表达式里面不能写循环 判断逻辑语句。
+		万幸的是可以写三元表达式
+		{{n1>n2 ?(n1+n2):(n1*n2)}}
+	</p>
+	<script>
+	var app=angular.module('myapp',[]).controller('c1',function($scope){
+		$scope.n1=10;
+		$scope.n2=20;
+	}).controller('c2',function($scope){
+		$scope.person={
+			name:'张三',
+			age:12
+		}
+	}).controller('c3',function($scope){
+		$scope.sg=[
+			'苹果','梨子','桃子'
+		]
+	})
+	</script>
+</body>
+</html>

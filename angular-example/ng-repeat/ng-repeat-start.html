@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body ng-app="myapp">
+	<div class="list" ng-controller="infos">
+		<div ng-repeat-start="val in info">{{val.data | date:"yyyy/MM/dd"}}</div>
+		<h3>{{val.title}}</h3>
+		<p ng-repeat-end>{{val.dec}}</p>
+	</div>
+
+	<script>
+	angular.module('myapp',[]).controller('infos',['$scope',function($scope){
+		$scope.info=[
+			{title:"增长放缓",dec:"从今天开始我国经济增长放缓",data:new Date()},
+			{title:"增长放缓",dec:"从今天开始我国经济增长放缓",data:new Date()},
+			{title:"增长放缓",dec:"从今天开始我国经济增长放缓",data:new Date()}
+		]
+	}])
+	</script>
+</body>
+</html>

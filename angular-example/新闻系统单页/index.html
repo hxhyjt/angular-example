@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app='news'>
+<head>
+	<meta charset="UTF-8">
+	<title>新闻管理系统</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/angular-animate.min.js"></script>
+	<script src="js/app.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<header>
+		<h2>新闻管理系统</h2>
+	</header>
+	<section>
+		<ul class="left">
+			<li><a href="#/">新闻列表</a></li>
+			<li><a href="#/add">发布新闻</a></li>
+		</ul>
+		<div class='right' ng-view>
+			
+		</div>
+	</section>
+	<style >
+	.right>*.ng-enter{
+		animation:senceIn .5s;
+	}
+	.right>*.ng-leave{
+		animation:senceOut .5s;
+	}
+	@keyframes senceIn{
+		0%{
+			transform:translateX(100%) ;
+		}
+		100%{
+			transform:translateX(0) ;
+		}
+	}
+	@keyframes senceOut{
+		0%{
+			transform:translateX(0) ;
+		}
+		100%{
+			transform:translateX(-100%) ;
+		}
+	}
+	</style>
+</body>
+</html>

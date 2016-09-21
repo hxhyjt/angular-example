@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/angular.js"></script>
+	<script src="js/app.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			用户登录
+		</div>
+		<div class="panel-body">
+			
+			<div class="row">
+				<form class="form-horizontal" ng-controller='my-ctrl'>
+					<div class="col-md-12">
+						<div class="form-group">
+							<div class="col-md-2" align="right">
+								<label>登录：</label>
+							</div>
+							<div class="col-md-10">
+								<input type="text" class="form-control" placeholder='请输入用户名'  ng-model='info.user'>
+							</div>		
+						</div>	
+						<div class="form-group">
+							<div class="col-md-2" align="right">
+								<label>密码：</label>
+							</div>
+							<div class="col-md-10">
+								<input type="password" class="form-control" placeholder='请输入密码' ng-model='info.pwd'>
+							</div>
+						</div>	
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" ng-model='info.autoLo'>自动登录
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<button class="btn btn-primary" ng-click="getInfo()">获取数据</button>
+								<button class="btn btn-primary" ng-click="setInfo()">设置数据</button>
+								<button class="btn btn-primary" ng-click="reset()">重置数据</button>
+							</div>
+						</div>
+					</div>
+						
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../angular.js"></script>
+</head>
+<body>
+	<table ng-controller='list'>
+		<tr>
+			<th>编号</th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>年龄</th>
+		</tr>
+		<tr ng-repeat='v in user' ng-if='$index==2'>
+			<td>{{$index}}</td>
+			<td>{{v.name}}</td>
+			<td>{{v.sex}}</td>
+			<td>{{v.age}}</td>
+		</tr>
+	</table>
+	<script>
+	angular.module('myapp',[]).controller('list',function($scope){
+		$scope.user=[
+			{name:'小龙女',sex:'女',age:18},
+			{name:'杨过',sex:'男',age:22},
+			{name:'法海',sex:'男',age:28},
+			{name:'白素贞',sex:'女',age:99},
+		]
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src='js/angular.js'></script>
+  <script src="js/index.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-app='todolist'>
+    <div class="todolist" ng-controller='todos'>
+        <div class="input-box">
+            <input type="text" name="text" ng-model='todo' ng-keydown="inputText()">
+        </div>
+        <div class="nowtodo" ng-repeat="n in tdls">
+            <li><input type=""<div>{{n.title}}</div><button>del</button></li>
+        </div>
+        <div class="comtodo">
+
+        </div>
+        <button>删除所有</button>
+    </div>
+</body>
+</html>

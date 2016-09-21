@@ -1,0 +1,54 @@
+<div class="input">
+	<div class="title">
+		<label for="">
+		新闻标题
+		</label>
+		<input type="text" ng-model='one.title'>
+	</div>
+	<div class="content">
+		<label for="">
+		新闻内容
+		</label>
+		<textarea  cols="80" rows="10" ng-model='one.content'></textarea>
+	</div>
+	<input type="button" ng-click='updata()' value="更新新闻">
+</div>
+<style>
+.input{
+	width:90%;
+	margin:30px auto;
+}
+.input label{
+	width:70px;
+	height:40px;
+	line-height:40px;
+	display:inline-block;
+}
+.input input[type=text]{
+	width:500px;
+	height:40px;
+}
+.content{
+	margin:30px 0;
+	
+}
+.content label{
+	vertical-align:middle;
+}
+.content textarea{
+	vertical-align:middle;
+}
+.input input[type=button]{
+	width:120px;
+	height:40px;
+	outline:0;
+	border:0;
+	color:#fff;
+	background-color:#008BF4;
+	margin-left:70px;
+	padding:0;
+}
+.input input[type=button]:active{
+	opacity:.5;
+}
+</style>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<!--
+	给body标签 绑定一个控制器 
+	myctrl表示控制器名称 
+	表示：body中的所有内容 由myctrl控制器管理
+-->
+<body ng-controller='myctrl'>
+	<input type="text" ng-model='say'><br/>
+	{{say}},AngularJS
+	<!--
+		在这里例子中，我们看到了 数据模型、看到了视图、但是控制器呢？
+		angularjs内部给我们内置了控制器，但是我们开发时都是自己写控制器。
+
+		## MVC 开发模式
+		M model模型  数据模型
+		V view 视图  html+css 展现 表现  模板
+		C controller 控制器  控制业务逻辑
+		## 业务逻辑
+		不同的项目有不同的功能，不同的功能需要不同的实现，实现这些核心功能的代码就叫业务逻辑
+		比如让你实现一个功能，给你两个数，让你获取它的和，你所写的如何才能获得任意给定的两个数的和，这个程序实现过程即可成为业务逻辑处理。
+	-->
+	<script>
+	//angular.module() 创建模块  管理模块依赖的一个方法
+	var app=angular.module('myapp',[]);
+
+	//controller方式 给模块添加一个控制器 一个模块可以有多个控制器
+	//控制器方法参数 ： 名称   回调函数
+	//控制器的作用 处理业务逻辑
+	app.controller('myctrl',function($scope){
+		//$scope 是一个普通对象  用来实现 模型、视图、控制器 三者之间发生联系
+		$scope.say='hi';
+	})
+	</script>
+</body>
+</html>

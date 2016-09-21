@@ -1,0 +1,84 @@
+body,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,hr,p,pre,form/*IE6/7下form的默认样式中margin不为0*/,button, input, textarea,th,td/*padding:1px;*/{
+	margin:0;
+	padding:0;
+}
+ul,ol{
+	list-style: none;
+}
+table{
+	border-collapse: collapse;/*采用合并边框*/
+	border-spacing: 0;/*去除边框间间距*/
+}
+a{/*去除a标签下划线*/
+	text-decoration: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+a,button{/*去除移动端 蓝色背景*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+input:focus{/*去除input活动外边框*/
+	outline: 0;
+}
+img{/*ie6-10去除a包含img产生蓝色边框*/
+	border:0; 
+}
+pre{/*优化pre在浏览器显示效果*/
+	overflow: auto;
+}
+code,kbd,pre,samp {
+	font-family: monospace, monospace;/*设定标签采用等宽字体*/
+	font-size: 1em;
+}
+body{
+	font-family: "微软雅黑";
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+header{
+	padding:0 20px;
+	line-height: 60px;
+	height: 60px;
+	background-color: #272822;
+	color:#fff;
+}
+header h2{
+	font-weight: normal;
+}
+section{
+	height: calc(100% - 60px); 
+	margin-left: 200px;
+}
+.left{
+	box-sizing: border-box;
+	width: 200px;
+	height: 100%;
+	margin-left: -200px;
+	background-color: #595959;
+	float: left;
+}
+.left li{
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	border-bottom:1px solid rgba(224,224,224,.1);
+}
+.left li a{
+	color:#fff;
+}
+.left li:hover,.left li.active{
+	background-color:#008BF4; 
+}
+.right{
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	float: right;
+	background-color: #fefefe;
+}

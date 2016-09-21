@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body>
+	<!--
+		ng-model 指令可以将输入域的值与 AngularJS 创建的变量绑定。
+		当你修改表单的时候,通过ng-model绑定的变量的值也会发生变化
+
+		MVVM
+		MV 数据变化 => 视图变化   VM  用户操作视图=> 改变数据
+
+		MVVM主要使用在 表单部分
+	-->
+	<input type="text" ng-model='say'><br/>
+	{{say}},AngularJS
+	<!--
+		在这里例子中，我们看到了 数据模型、看到了视图、但是控制器呢？
+		angularjs内部给我们内置了控制器，但是我们开发时都是自己写控制器。
+
+		## MVC 开发模式
+		M model模型  数据模型
+		V view 视图  html+css 展现 表现  模板
+		C controller 控制器  控制业务逻辑
+		## 业务逻辑
+		不同的项目有不同的功能，不同的功能需要不同的实现，实现这些核心功能的代码就叫业务逻辑
+		比如让你实现一个功能，给你两个数，让你获取它的和，你所写的如何才能获得任意给定的两个数的和，这个程序实现过程即可成为业务逻辑处理。
+	-->
+</body>
+</html>

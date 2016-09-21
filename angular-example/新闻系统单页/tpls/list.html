@@ -1,0 +1,31 @@
+<ul class="list-box">
+	<li ng-repeat='c in list'>
+		<h3><a href="#/list/{{c.id}}">{{c.title}}</a><span>{{c.date | date:'yyyy-MM-dd'}}</span></h3>
+		<p>{{c.content| limitTo:70:'...'}}</p>
+	</li>
+</ul>
+<style>
+	.list-box{
+		width:90%;
+		margin:0 auto;
+	}
+	.list-box li{
+		padding:10px 0px;
+		border-bottom:1px solid #eee;
+	}
+	.list-box h3{
+		font-weight:normal;
+		line-height:45px;
+	}
+	.list-box h3 span{
+		float:right;
+		font-size:14px;
+	}
+	.list-box a{
+		color:#444;
+	}
+	.list-box p{
+		font-size:14px;
+		color:#999;
+	}
+</style>

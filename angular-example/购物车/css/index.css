@@ -1,0 +1,69 @@
+body,ul,li{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+table{
+	border-collapse: collapse;/*采用合并边框*/
+	border-spacing: 0;/*去除边框间间距*/
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.shop-list{
+    width: 1200px;
+    height: auto;
+    margin:0 auto;
+}
+.shop-list a{
+    color:#fff;
+    width:60px;
+    height: 30px;
+    display: block;
+    margin:5px auto;
+    line-height: 30px;
+    text-align: center;
+    background: #33DC7F;
+}
+.shop-list>.list{
+    width: 45%;
+    height: auto;
+    float: left;
+}
+.shop-list table{
+    width: 100%;
+    border-top:1px solid #eee;
+    border-left:1px solid #eee;
+}
+.shop-list td,.shop-list th{
+    text-align: center;
+    line-height: 40px;
+    border-right:1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.shop-list td input[type=text]{
+    width:40px;
+    text-align: center;
+}
+.shop-list td input[type=button]{
+    background: #33DC7F;
+    border:0;
+    color:#fff;
+    font-size: 14px;
+}
+.shop-list th span{
+    padding:0 5px;
+    display: inline-block;
+    transform: rotate(0deg);
+}
+.shop-list th span.active{
+    transform: rotate(90deg);
+}
+.shop-list>.car{
+    width: 50%;
+    float: right;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body>
+	<div ng-app>
+		{{'hello'}},AngularJS
+		<!-- {{ expression }} 用来解析angularjs表达式  -->
+	</div>
+	<hr>
+	<div>
+		{{'hello'}},AngularJS
+	</div>
+	<!--
+		ps:AngularJS 指令是扩展的 HTML 属性，带有前缀 ng-。
+		两段相同的代码  唯一不同的就是ng-app
+		ng-app 是angularjs中的一个内置指令,作用：
+		告诉angularjs那一部分的代码归其管理。(解析执行)
+		因为我们做一个项目的时候并不是说所有的部分都需要使用angularjs,因此我们可以把ng-app 写到我们需要的位置。
+		
+		如果说写到html标签上，表示整个页面被angularjs接管
+		<html ng-app></html>
+		
+		如果说写到div标签上，表示这个div标签中内容被angularjs接管。
+		<div ng-app></div>
+	-->
+</body>
+</html>

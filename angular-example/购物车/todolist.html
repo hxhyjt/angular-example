@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app='car'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src='js/angular.js'></script>
+  <script src="js/index.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class='shop-list'  ng-controller='show'>
+    <div class="list">
+        <h3>商品列表</h3>
+        <table>
+            <tr>
+                <th>编号<span>&gt;</span></th>
+                <th>名称<span>&gt;</span></th>
+                <th>价格<span>&gt;</span></th>
+                <th>购买</th>
+            </tr>
+            <tr ng-repeat='val in items' item-id='{{val.i}}'>
+                <td>{{$index+1}}</td>
+                <td>{{val.name}}</td>
+                <td>{{val.price|currency:"￥"}}</td>
+                <td>
+                <a href="javascript:;" item-id="{{val.id}}" item-name="{{val.name}}" item-price="{{val.price}}" ng-click="buy($event)">购买</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="car">
+        <h3>购物车</h3>
+        <table>
+            <tr>
+                <th>编号<span ng-click='orders("id")'  ng-class="{'active':orderType=='+','':orderType=='-'}">&gt;</span></th>
+                <th>名称<span ng-click='orders("name")'  ng-class="{'active':orderType=='+','':orderType=='-'}">&gt;</span></th>
+                <th>价格<span ng-click='orders("price")'  ng-class="{'active':orderType=='+','':orderType=='-'}">&gt;</span></th>
+                <th>数量<span ng-click='orders("num")'  ng-class="{'active':orderType=='+','':orderType=='-'}">&gt;</span></th>
+                <th>总价<span ng-click='orders("num")'  ng-class="{'active':orderType=='+','':orderType=='-'}">&gt;</span></th>
+                <th>删除</th>
+            </tr>
+            <tr ng-repeat="val in carList |orderBy:type:orderType" item-id="{{val.id}}">
+                <td>
+                    {{val.id}}
+                </td>
+                <td>{{val.name}}</td>
+                <td>{{val.price|currency:"￥"}}</td>
+                <td>
+                    <input type="button" value="+" ng-click='jia(val.id)'>
+                    <input type="text" ng-model='val.num'/>
+                    <input type="button" value="-" ng-click='jian(val.id)'>
+                </td>
+                <td>{{val.price*val.num|currency:'￥'}}</td>
+                <td>
+                    <input type="button" value="del" ng-click='del(val.id)'>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style='text-align:left'>
+                    总价：{{toal|currency:"￥":2}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

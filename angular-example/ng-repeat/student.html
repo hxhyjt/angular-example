@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body ng-app='myapp'>
+
+	<table ng-controller="items" border="1">
+		<tr>
+			<td><input type="text" ng-model='txt'></td><td colspan="2"><button ng-click="search()">搜索</button></td>
+		</tr>
+		<tr>
+			<th >编号</th>
+			<th ng-click="orders('name')">姓名</th>
+			<th ng-click="orders('age')">年龄</th>
+		</tr>
+		<tr ng-repeat="val in item"  style="{{$index%2==0?'background:blue;':'background:red'}}">
+			<td>{{$index+1}}</td>
+			<td>{{val.name}}</td>
+			<td>{{val.age}}</td>
+		</tr>
+	</table>
+	<script>
+	var app=angular.module('myapp',[]);
+	app.controller('items',['$scope','$filter',function($scope,$filter){
+		var items=[
+			{name:"张三",age:10},
+			{name:"小龙女",age:100},
+			{name:"李四",age:50},
+			{name:"赵柳",age:99}
+		];
+		$scope.item=items;
+		$scope.orders=function(t){
+			$scope.orders.flag=!$scope.orders.flag;
+			$scope.item=$filter('orderBy')($scope.item,t,$scope.orders.flag);
+		}
+		$scope.search=function(){
+			$scope.item=$filter('filter')(items,$scope.txt)
+		}
+	}])
+	</script>
+</body>
+</html>

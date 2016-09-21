@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+</head>
+<body ng-controller='sctrl'>
+	{{name}}
+	<hnz-tab hnz-class='box' hnz-id='out' hnz-data='t1'>	
+		<div class="list">111111</div>
+		<div class="list">222222</div>
+		<div class="list">3333333</div>	
+	</hnz-tab>
+	<div hnz-tab  hnz-class='box' hnz-data='t2' >
+		<div class="list">
+			<p>dfjklssdfjdlksf</p>
+		</div>
+		<div class="list">
+			<p>dsfjldksjflksdf</p>
+		</div>
+		<div class="list">
+			<p>djfklsjflkjsdlkf</p>
+		</div>
+	</div>
+	<div hnz-tab  hnz-class='box' hnz-data='t2' >
+		<div class="list">
+			<p>dfjklssdfjdlksf</p>
+		</div>
+		<div class="list">
+			<p>dsfjldksjflksdf</p>
+		</div>
+		<div class="list">
+			<p>djfklsjflkjsdlkf</p>
+		</div>
+	</div>
+	<script>
+	var app = angular.module('myapp',[])
+	console.log(app)
+	app.controller('sctrl',function($scope){
+		$scope.name='aaa';
+		$scope.t1=[
+			'手机','平板','ipad'
+		]
+		$scope.t2=[
+			'a1','a2','a3'
+		]
+	})
+	</script>
+	<script src="directive.js"></script>
+	<style>
+	.box{
+		width:300px;
+		height:150px;
+		border:1px solid #ccc;
+	}
+	.box .list{
+		width:100%;
+		height:120px;
+		display:none;
+	}
+	.box .list:nth-of-type(1){
+		display:block;
+	}
+	.box a{
+		width:50px;
+		height:30px;
+		float:left;
+		line-height:30px;
+	}
+	.box a.active{
+		background-color:blue;
+	}
+	.box>div{
+		overflow:hidden;
+	}
+	</style>
+</body>
+</html>

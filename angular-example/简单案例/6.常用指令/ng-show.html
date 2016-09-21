@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../angular.js"></script>
+</head>
+<body>
+	<div class="box" ng-controller='menu'>
+		<a href="javascript:;" ng-click="toggle()">allcy</a>
+		<ul ng-show='show'>
+			<li>安全中心</li>
+			<li>用户权限</li>
+			<li>帮助信息</li>
+		</ul>
+	</div>
+	<script>
+	angular.module('myapp',[]).controller('menu',function($scope){
+		$scope.show=false;
+		$scope.toggle=function(){
+			$scope.show=!$scope.show;
+		}
+	})
+	</script>
+</body>
+</html>

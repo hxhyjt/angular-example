@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body ng-app="myapp">
+	<table border=1 ng-controller='userlist'>
+		<tr>
+			<th>姓名</th>
+			<th>城市</th>
+			<th>国家</th>
+		</tr>
+		<tr ng-repeat="val in users">
+			<td>{{val.Name}}</td>
+			<td>{{val.City}}</td>
+			<td>{{val.Country}}</td>
+		</tr>
+	</table>
+
+	<script>
+	var app=angular.module('myapp',[]);
+	//注入 $http服务
+	app.controller('userlist',['$scope','$http',function($scope,$http){
+		$http.get('users.json').success(function(r){$scope.users=r.records;console.log($scope.users)})
+	}])
+	</script>
+</body>
+</html>

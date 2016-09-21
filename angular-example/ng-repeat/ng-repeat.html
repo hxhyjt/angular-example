@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body ng-app='myapp'>
+	<ol ng-controller="items">
+		<li ng-repeat="val in item" ng-bind='val.name'></li>
+	</ol>
+	<script>
+	var app=angular.module('myapp',[]);
+	app.controller('items',['$scope',function($scope){
+		$scope.item=[
+			{name:"张三"},
+			{name:"小龙女"},
+			{name:"李四"},
+			{name:"赵柳"}
+		]
+	}])
+	</script>
+</body>
+</html>

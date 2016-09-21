@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+</head>
+<body>
+	<div ng-controller='get' ng-app='myapp'>
+		<a href="">baidu</a>
+		<ul>
+			<li ng-repeat='c in colors'>{{c.name}}</li>
+		</ul>
+	</div>
+		<a href="">baidu</a>
+	
+	<script>
+	angular.module('myapp',[]).controller('get',function($scope){
+		$scope.colors=[
+			{name:'red'},
+			{name:'yellow'},
+			{name:'blue'}
+		]
+	})	
+	</script>
+</body>
+</html>
